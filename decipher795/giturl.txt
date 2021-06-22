@@ -1,0 +1,9 @@
+"url": "https://None@decipher795.scm.azurewebsites.net/decipher795.git"
+git remote add azure https://$decipher795:cqeXdLp3vBHxTa67xkuojZK5L7FnMMLQtcNPgK3qZYEHymLYmYP5AthfkxFf@decipher795.scm.azurewebsites.net
+git clone https://decipher795.scm.azurewebsites.net/decipher795.git
+
+username : $decipher795
+password : cqeXdLp3vBHxTa67xkuojZK5L7FnMMLQtcNPgK3qZYEHymLYmYP5AthfkxFf
+
+https://docs.microsoft.com/en-us/answers/questions/67581/34-application-error-if-you-are-the-application-ad.html
+https://decipher795.azurewebsites.net/
