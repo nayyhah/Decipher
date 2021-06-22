@@ -13,6 +13,9 @@
 *:focus {
     outline: none;
 }
+/* #loader{
+  display:none;
+} */
 
 h1{
   text-align: center;

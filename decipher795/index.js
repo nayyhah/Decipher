@@ -117,8 +117,8 @@ app.post('/', function(req,res){
 
     }
     else{
-        return res.redirect('error.html');
-    }
+            console.log("hello");
+        }
 })
 
 

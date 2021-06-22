@@ -28,41 +28,11 @@
     <link rel="stylesheet" href="/style/Homepage.css"/>
     <link rel="stylesheet" href="/style/Dropdown.css"/>
     <link rel="stylesheet" href="/style/SubmitButton.css"/>
-    <style>
-        #loader {
-            border: 12px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 12px solid #444444;
-            width: 70px;
-            height: 70px;
-            animation: spin 1s linear infinite;
-        }
-          
-        @keyframes spin {
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-          
-        .center {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-        }
-    </style>
-
 
     <title>Decipher</title>
 
 </head>
 <body translate="no">
-
-    <div id="loader" class="center">
-    <img src = ""
-    </div>
 
     <!-- Navigation -->
     <div class="hero-anime">	
@@ -94,7 +64,7 @@
 									    <a class="nav-link" href="/pages/instructions.html">Instructions</a>
 								    </li>
 
-                                    <img src="../icons/moon.png" id="icon" alt="icon">
+                                    <img src="./icons/moon.png" id="icon" alt="icon">
 
                                     <!-- 
                                         <button type="button" class="btn btn-light">Login/SignUp</button> 
@@ -107,9 +77,22 @@
 		    </div>
 	    </div>
 
+        <div id="loader">
+            <p>
+                <span class="quote" id="quote" style="display:none;">
+                <br>
+                <br>
+                    <img src = "./images/trial1.gif" width="30%">
+                    <i class="fa fa-quote-left"></i></span> Loading.... <span class="quote"><i class="fa fa-quote-right"></i>
+                <br>
+                <br>
+                </span>
+            </p>
+        <div>
+
 		<!-- Home Content -->
 
-        <div class="main-content">
+        <div class="main-content" id="content" style="display:block;">
             </br>
             </br>
             <h1>Decipher</h1>
@@ -179,11 +162,7 @@
     <script src="/scripts/Navbar.js"></script>
     <script src="/scripts/Darkmode.js"></script>
     <script src="/scripts/Dropdown.js"></script>
-    <script>
-    function UserInput() {
-        document.querySelector("#loader").style.visibility = "visible";
-    };
-    </script>
+    <script src="/scripts/UserInputVal.js"></script>
     
 </body>
 </html>
