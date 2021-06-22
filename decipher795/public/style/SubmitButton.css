@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Oswald:200,400|Playfair+Display:400,400i");
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Secular+One&display=swap');
+
+
+.submitbutton {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+	 /* /* position: fixed; */
+	 /* top: 60%; */
+     margin-left: 50%;
+	 transform: translate(-50%, -50%);    
+}
+ .btn {
+	 outline: 0;
+	 display: inline-flex;
+	 align-items: center;
+	 justify-content: space-between;
+	 background: #5380f7;
+	 max-width:300px;
+     width:30%; 
+	 /* min-width: 260px; */
+	 border: 0;
+	 border-radius: 4.5px;
+	 box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+	 box-sizing: border-box;
+	 padding: 12px 0px 12px 60px;
+	 color: #fff;
+	 font-size: 12px;
+	 font-weight: 600;
+	 letter-spacing: 1.2px;
+	 text-transform: uppercase;
+	 overflow: hidden;
+	 cursor: pointer;
+	 margin-top: -45%;
+	 /* font-family: 'Poppins', sans-serif; */
+	font-family: 'Open Sans', sans-serif;
+	 	 
+}
+.btn {
+	background: linear-gradient(to right, #645f99 , #20CADD);
+    background-image: linear-gradient(to right, rgb(100, 95, 153), rgb(32, 202, 221));
+}
+
+
+.btn .text{
+	font-size: 15px;
+}
+
+.btn img{
+	width : 32px;
+	height : auto ;
+	padding :4px;
+}
