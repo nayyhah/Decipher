@@ -4,11 +4,14 @@
 :root{
 	--primary-color: #edf2fc;
 	--secondary-color: #212121;
+	--third: #fff;
+
 }
 
 .dark-theme{
-	--primary-color: #000106;
+	--primary-color: #070a1a;
 	--secondary-color: #fff;
+	--third: #000106;
 }
 
 body{
@@ -87,7 +90,7 @@ body{
 }
 
 .nav-link{
-	color: #212121 !important;
+	color: var(--secondary-color) !important;
 	font-weight: 500;
     transition: all 200ms linear;
 }
@@ -129,7 +132,7 @@ body{
 ================================================== */
 
 .bg-light {
-	background-color: #fff !important;
+	background-color: var(--third) !important;
     transition: all 200ms linear;
 }
 

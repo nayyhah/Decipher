@@ -24,6 +24,7 @@
 
 
     <!-- CSS Linked -->
+    <link rel="stylesheet" href="/style/Loading.css"/>
     <link rel="stylesheet" href="/style/Navbar.css"/>
     <link rel="stylesheet" href="/style/Homepage.css"/>
     <link rel="stylesheet" href="/style/Dropdown.css"/>
@@ -41,7 +42,7 @@
 	    		<div class="row">
 	    		    <div class="col-12">
 				    	<nav class="navbar navbar-expand-md navbar-light">
-					    	<a class="navbar-brand" href="#" target="_blank"><span class="one"><img src="./icons/logo.svg" alt="Logo"></span><span class="one"><img src="./icons/logobg.png" alt="Logo"></span></a>
+					    	<a class="navbar-brand" href="#" target="_blank"><span class="one"><img src="./icons/logo.svg" alt="Logo"></span><span class="one"><img src="./icons/logo.png" alt="Logo"></span></a>
 						
 						    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#MainNavbar" aria-controls="MainNavbar" aria-expanded="false" aria-label="Toggle navigation">
 							    <span id= "ChangeToggle" class="navbar-toggler-icon">   
@@ -52,7 +53,7 @@
 						    <div class="collapse navbar-collapse" id="MainNavbar">
 						    	<ul class="navbar-nav ml-auto py-4 py-md-0">
 
-							    	<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+							    	<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
 								    	<a class="nav-link" href="/">Home</a>
 								    </li>
 
@@ -77,18 +78,32 @@
 		    </div>
 	    </div>
 
-        <div id="loader">
-            <p>
-                <span class="quote" id="quote" style="display:none;">
-                <br>
-                <br>
-                    <img src = "./images/trial1.gif" width="30%">
-                    <i class="fa fa-quote-left"></i></span> Loading.... <span class="quote"><i class="fa fa-quote-right"></i>
-                <br>
-                <br>
+        <!-- Loading Content -->
+        <div class="loader" id="loading" style="display:none;">
+            <div class="body">
+                <span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </span>
-            </p>
-        <div>
+                <div class="base">
+                    <span></span>
+                    <div class="face"></div>
+                </div>
+            </div>
+
+            <div class="longfazers">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1>Processing</h1>
+            <p class="wait"> processing<br>
+            (Please wait for a few more minutes)</p>
+        </div>
 
 		<!-- Home Content -->
 
@@ -131,7 +146,6 @@
 
             </form>  
 
-            </br>
 
             <!-- <div class="submitbutton">
                 <button class="btn" value="Submit" onclick="UserInput()">

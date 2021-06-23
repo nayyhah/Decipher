@@ -11,9 +11,14 @@ function UserInput() {
 
     if(i1){
         var block1 = document.getElementById('content');
-        var block2 = document.getElementById('quote');
+        var block2 = document.getElementById('loading');
+        var block3 = document.getElementById('footer');
         block1.style.display = "none";
         block2.style.display = "block";
+        block3.style.position = "fixed";
+        block3.style.left = "0";
+        block3.style.bottom = "0";
+        block3.style.width = "100%";
     }
     
     else{
