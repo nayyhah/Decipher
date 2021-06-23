@@ -30,11 +30,11 @@ body{
 }
 ::selection {
 	color: #fff;
-	background-color: #8167a9;
+	background-color: #7c9bf1;
 }
 ::-moz-selection {
 	color: #fff;
-	background-color: #8167a9;
+	background-color: #7c9bf1;
 }
 
 /* ============ Navigation ============== */
@@ -95,7 +95,7 @@ body{
     transition: all 200ms linear;
 }
 .nav-item:hover .nav-link{
-	color: #09539c !important;
+	color: #7193f1 !important;
 }
 .nav-item.active .nav-link{
 	color: #777 !important;
@@ -112,7 +112,7 @@ body{
 	width: 100%;
 	height: 2px;
 	content: '';
-	background-color: #8167a9;
+	background-color: #7394ee;
 	opacity: 0;
     transition: all 200ms linear;
 }
@@ -174,4 +174,8 @@ body{
         text-align: center;
 		margin-left: 1px;
     }
+	#icon{
+		margin:auto;
+		margin-left: 50%;
+	}
 }

@@ -47,11 +47,15 @@ p{
     -webkit-transform: rotate(-180deg);
     transform: rotate(-180deg);
 }
-.quote{
+.quotel{
   font-size: 10px;
   color:red;
-  top:-10px;
 }
+.quoter{
+  font-size: 10px;
+  color:red;
+}
+
 
 #error{
   color : rgb(207, 120, 120);
@@ -67,6 +71,10 @@ p{
 
 /* Mobile View */
 @media(max-width:32em){
+  .inputbox input {
+    width:82%;  
+    margin-left:10%;
+  }
   .main{
     width:26%;  
     margin-left:37%;

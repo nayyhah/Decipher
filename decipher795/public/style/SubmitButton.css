@@ -25,7 +25,7 @@
 	 border-radius: 4.5px;
 	 box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
 	 box-sizing: border-box;
-	 padding: 12px 0px 12px 60px;
+	 padding: 12px 0px 12px 80px;
 	 color: #fff;
 	 font-size: 12px;
 	 font-weight: 600;
@@ -33,7 +33,7 @@
 	 text-transform: uppercase;
 	 overflow: hidden;
 	 cursor: pointer;
-	 margin-top: -45%;
+	 margin-top: -40%;
 	 /* font-family: 'Poppins', sans-serif; */
 	font-family: 'Open Sans', sans-serif;
 	 	 
@@ -52,4 +52,17 @@
 	width : 32px;
 	height : auto ;
 	padding :4px;
+}
+
+/* Mobile View */
+@media(max-width:32em){
+  .btn{
+    /* max-width:300px; */
+    width:96%; 
+	margin-top: -185%;
+	 padding: 12px 0px 12px 54px;
+  }
+  #footer{
+	  margin-top: -10px;
+  }
 }

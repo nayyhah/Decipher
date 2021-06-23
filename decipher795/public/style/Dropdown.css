@@ -209,7 +209,7 @@ select {
 /* Mobile View */
 @media(max-width:32em){
   .main{
-    min-width:210px;
+    min-width:235px;
     width:auto;
   }
 }
