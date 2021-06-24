@@ -20,29 +20,18 @@ h1{
 p{
   text-align: center;
 }
-.inputbox input {
-  /* max-width:350px; */
-  width: 56% ;
-  max-width:400px;  
-  height:40px;
-  padding: 3.5px 9px;
-  margin-left:22%;
-  border-radius: 6px; 
-  border: solid 1px #eee;
-  box-shadow: 0px 2px 5px 0px rgba(155, 155, 155, 0.5);
+.main-content .row{
+  padding :3px;
+  border-color: red;
+  
 }
+.main-content iframe{
+  border-radius: 9px;
+  width: 900px;
+  height: 500px;
+  margin:auto;
+  margin-left:10%;
 
-.inputbox input :focus {
-    background-color: #fff;
-}
-
-.inputbox input:hover {
-    background-color: #fff;
-}
-
-.inputbox input.open:after {
-    -webkit-transform: rotate(-180deg);
-    transform: rotate(-180deg);
 }
 .quote{
   font-size: 10px;

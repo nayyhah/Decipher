@@ -8,6 +8,7 @@ function UserInput() {
         match = linkurl.match(regExp);
         i1 = (match && match[2].length == 11) ? true : false ;
     }
+    
 
     if(i1){
         var block1 = document.getElementById('content');
