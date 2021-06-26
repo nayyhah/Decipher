@@ -43,11 +43,12 @@ async function blobDownload() {
   vidtitleBlobClient.downloadToFile(vidtitle);
 }
 
-
+//Change Language Request From Home Page
 app.post('/', function(req,res){
 	var linkurl = req.body.linkurl;
 	var lang =req.body.lang;
 
+    //  Validating Youtube URL
     if( (linkurl != undefined || linkurl != '') ){
         var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/;
         match = linkurl.match(regExp);
@@ -59,7 +60,8 @@ app.post('/', function(req,res){
     }
 
     if(i1){
-
+        // Link is validated
+        // Write Linkurl and Language in File
         fs.writeFile('input_link.txt', linkurl, err => {
             if (err) {
                 console.error(err)
@@ -73,14 +75,14 @@ app.post('/', function(req,res){
                 return
             }
         })
-
+        
+        //Upload Link and Language Files in Blob 
         blobUpload();
 
         let largeDataSet = [];
-        // spawn new child process to call the python script
-        console.log('#1 ...')
+        // Spawn new child process to call the python script
+        console.log('Trying to run Python Script')
         const python = spawn('python', ['decipherscript.py']);
-        console.log('#2 ...')
 
         // collect data from script
         python.stdout.on('data', function (data) {
@@ -96,21 +98,19 @@ app.post('/', function(req,res){
             // res.send(largeDataSet.join(''));
             return res.redirect('pages/finalpage.html');
         })
-
+        
+        //Download title of Video from Blob
         blobDownload();
-        
-        
     }
     else{
-            console.log("hello");
-        }
+        console.log("Link is not Validated. Empty/Incorrect URL");
+    }
 })
 
-
+//Change Language Request From Final Page
 app.post('/pages/finalpage', function(req,res){
 
 	var lang =req.body.lang;
-
     fs.writeFile('language.txt', lang, err => {
         if (err) {
             console.error(err);

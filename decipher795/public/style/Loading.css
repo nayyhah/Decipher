@@ -1,9 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
-@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&family=Open+Sans:wght@300&family=Nunito+Sans&display=swap');
+
 :root{
     --fa:rgb(43, 44, 46);
     --fb:rgb(61, 63, 63);
-
 }
 
 .dark-theme{
