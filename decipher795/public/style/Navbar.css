@@ -5,6 +5,8 @@
 	--primary-color: #edf2fc;
 	--secondary-color: #212121;
 	--third: #fff;
+	--apad : 50px;
+	--apadd : 43px;
 
 }
 
@@ -12,6 +14,8 @@
 	--primary-color: #070a1a;
 	--secondary-color: #fff;
 	--third: #000106;
+	--apad : 48px;
+	--apadd : 40px;
 }
 
 body{
@@ -55,7 +59,7 @@ body{
 	transition : all 0.3s ease-out;
 }
 .start-header.scroll-on .navbar-brand img{
-	height: 43px;
+	height: var(--apadd);
 	-webkit-transition : all 0.3s ease-out;
 	transition : all 0.3s ease-out;
 }
@@ -79,7 +83,9 @@ body{
 	-webkit-transition : all 0.3s ease-out;
 	transition : all 0.3s ease-out;
 }
-
+.navbar-brand #logo{
+	height: var(--apad);
+}
 .navbar-toggler {
 	float: right;
 	border: none;

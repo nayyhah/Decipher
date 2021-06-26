@@ -24,6 +24,8 @@
 
     <!-- CSS Linked -->
     <link rel="stylesheet" href="/style/Navbar.css"/>
+    <link rel="stylesheet" href="/style/Dropdown.css"/>
+    <link rel="stylesheet" href="/style/SubmitButton.css"/>
     <link rel="stylesheet" href="/style/finalPage.css"/>
 
     <title>Decipher</title>
@@ -39,7 +41,7 @@
 	    		<div class="row">
 	    		    <div class="col-12">
 				    	<nav class="navbar navbar-expand-md navbar-light">
-					    	<a class="navbar-brand" href="#" target="_blank"><span class="one"><img src="/Icons/logo.svg" alt="Logo"></span><span class="one"><img src="/Icons/logobg.png" alt="Logo"></span></a>
+					    	<a class="navbar-brand" href="#" target="_blank"><span class="one"><img src="/Icons/logo.svg" id="logo" alt="Logo"></span><span class="one"><img src="/Icons/logo.png" id="logo2" alt="Logo"></span></a>
 						
 						    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#MainNavbar" aria-controls="MainNavbar" aria-expanded="false" aria-label="Toggle navigation">
 							    <span id= "ChangeToggle" class="navbar-toggler-icon">   
@@ -81,45 +83,59 @@
             </br>
             </br>
 
-            <p>
-                
-                     This is the title of youtube video <span class="quote"><i class="fas fa-angle-double-right"></i></span>
+            <p class="title" id="title" >
+
+                <!-- <span class="quote"><i class="fas fa-angle-double-right"></i></span> -->
             </p>
     
         
-            <div class="row">
-            
-                    <iframe src="https://decipherstorage795.blob.core.windows.net/videos/final_final.mp4" type="video/mp4" >
-                        </iframe>
+            <!--<div class="row">
 
+                <iframe src="https://decipherstorage795.blob.core.windows.net/videos/final_final.mp4" type="video/mp4" ></iframe>
+-->
+        <div class="row">
 
-                <!--<div class="col-lg-8 col-md-6 col-sm-12">
-                    <div class="content left-bound">
-                        <div class="d-flex flex-column">
-                        <iframe src="https://decipherstorage795.blob.core.windows.net/videos/final_final.mp4" type="video/mp4" >
-                        </iframe>
+            <div class="col-lg-8 col-md-6 col-sm-12">
+                <div class="content left-bound">
+                    <div class="d-flex flex-column">
+                        <iframe src="https://decipherstorage795.blob.core.windows.net/videos/final_final.mp4" type="video/mp4" ></iframe>
 
-                             <video width="320" height="240" controls>
-                                <source src="https://www.youtube.com/watch?v=CID-sYQNCew" type="video/mp4">
-                                <source src="Video.ogg" type="video/ogg">
-                                Your browser does not support the video tag.
-                            </video> 
+                    </div><br><br>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="content right-bound">
+                    <div class="d-flex flex-column">
 
-                        </div><br><br>
+                        <form name="decipherform" id="decipherform" action="/pages/finalpage" method="post">
+
+                            <div class="dropdownmenu">
+                                <div class="main">
+                                    <select name="lang">
+                                        <option value="en">English</option>
+                                        <option value="fr">French</option>
+                                        <option value="pt">Portuguese</option>
+                                        <option value="es">Spanish</option>
+                                        <option value="zh-CN">Mandarin</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="submitbutton">
+                                <input class="btn text" type="submit" onclick="UserInput()" id="submitDetails" name="submitDetails" value="Convert" /><br>
+                            </div>
+
+                        </form>
+
+                        <img src="/Images/final-img.svg" alt="img">
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="content right-bound">
-                        <div class="d-flex flex-column">
-                            <img src="/Images/Img5.png"  alt="img" />
-                        </div>
-                    </div>
-                </div>-->
             </div>   
     
             </br>
             </br>
 
+        </div>
         </div>
     </div>
 
@@ -139,15 +155,18 @@
     <!-- JavaScript Linked-->
     <script src="/Scripts/Navbar.js"></script>
     <script src="/Scripts/Darkmode.js"></script>
+    <script src="/scripts/Dropdown.js"></script>
+    
     <script >
-        const fs = require('fs');
-        get_file = '././write_title.txt'
-        fs.readFile(get_file, (err, data) => {
-            if (err) throw err;
-            get_title = data.toString();
-            console.log(get_title);
-        })
-        // document.getElementById("title").innerHTML = get_title ; 
+
+        //var video_title;
+        //fetch("localhost:8080/pages/finalpage").then((res) {video_title = res;})
+        //video_title = await fetch("localhost:8080/pages/finalpage");
+        //document.getElementById("title").innerHTML = video_title; 
+        
+        var video_title;
+        fetch("localhost:8080/pages/finalpage").then((res) {console.log(res); video_title = res;})
+        document.getElementById("title").innerHTML = video_title;
     </script>
     
     

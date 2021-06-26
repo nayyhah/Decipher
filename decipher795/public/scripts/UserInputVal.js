@@ -25,5 +25,4 @@ function UserInput() {
     else{
        document.getElementById("error").innerHTML = ( linkurl != '' ) ? "Please Enter a valid url." : "Please Enter the url to proceed." ;
     }
-
 }

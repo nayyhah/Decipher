@@ -97,28 +97,45 @@ app.post('/', function(req,res){
 
         blobDownload();
         
-        fs.readFile('write_title.txt', videotitle)
-
-        // Function to return 
-        function videotitle (err, data)
-        {
-            var title;
-            /* If an error exists, show it, otherwise show the file */
-            err ? Function("error","throw error")(err) : (title = JSON.stringify(data) );
-            var objectValue = JSON.parse(title);
-            var video_title="";
-            for(i=0;i<objectValue['data'].length;i++){
-                // console.log(objectValue['data'][i]);
-                var res = String.fromCharCode(objectValue['data'][i]);
-                video_title+=res;
-            }
-            console.log(video_title);
-        };
-
+        
     }
     else{
             console.log("hello");
         }
+})
+
+
+app.post('/pages/finalpage', function(req,res){
+
+	var lang =req.body.lang;
+
+    fs.writeFile('language.txt', lang, err => {
+        if (err) {
+            console.error(err);
+            return
+        }
+    })
+
+    blobUpload();
+
+    let largeDataSet = [];
+    // spawn new child process to call the python script
+    const python = spawn('python', ['decipherscript.py']);
+
+    // collect data from script
+    python.stdout.on('data', function (data) {
+        console.log('Pipe data from python script ...')
+        //dataToSend =  data;
+        largeDataSet.push(data)
+    })
+
+    // in close event we are sure that stream is from child process is closed
+    python.on('close', (code) => {
+        console.log(`child process close all stdio with code ${code}`);
+        // send data to browser
+        // res.send(largeDataSet.join(''));
+        return res.redirect('finalpage.html');
+    })
 })
 
 
@@ -128,6 +145,28 @@ app.get('/',function(req,res){
     });
     return res.redirect('index.html');
 }).listen(port)
+
+
+// app.get('/pages/finalpage',function(req,res){
+
+//     fs.readFile('write_title.txt', videotitle)
+//     // Function to return 
+//     async function videotitle (err, data)
+//     {
+//         var title;
+//         /* If an error exists, show it, otherwise show the file */
+//         err ? Function("error","throw error")(err) : (title = JSON.stringify(data) );
+//         var objectValue = JSON.parse(title);
+//         var video_title="";
+//         for(i=0;i<objectValue['data'].length;i++){
+//             // console.log(objectValue['data'][i]);
+//             var res = String.fromCharCode(objectValue['data'][i]);
+//             video_title+=res;
+//         }
+//         console.log(video_title);
+//         res.send(video_title); 
+//     };
+// })
 
 
 console.log(`Server running at http://localhost:${port}`);

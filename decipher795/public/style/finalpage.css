@@ -17,44 +17,63 @@
 h1{
   text-align: center;
 }
-p{
-  text-align: center;
-}
-.main-content .row{
+
+/* .main-content .row{
   padding :3px;
   border-color: red;
   
+} */
+.title{
+  margin-left:7%;
 }
 .main-content iframe{
   border-radius: 9px;
+  box-shadow: 0px 2px 5px 0px rgba(155, 155, 155, 0.5);
   width: 900px;
   height: 500px;
   margin:auto;
   margin-left:10%;
-
+  border-color: #000106;
 }
 .quote{
-  font-size: 10px;
-  color:red;
-  top:-10px;
+  font-size: 20px;
+  color:rgb(89, 20, 218);
 }
 
 #error{
   color : rgb(207, 120, 120);
 }
-
-
-@media(min-width:712px){
-  .inputbox input {
-    width:28%;  
-    margin-left:37%;
-  }
+.btn {
+	 max-width:350px;
+   width:90%; 
+	 /* min-width: 260px; */
+   padding: 12px 0px 12px 70px;
+   margin-top: -129%;
 }
+.main{
+  max-width:350px;
+  width:63%;  
+  height:250px;
+  margin-top: 10%;
+  
+}
+.main-content .row img{
+  height: 230px;
+  width: 400px;
+  margin-top: -100px;
+  margin-left: 55px;
+}
+
 
 /* Mobile View */
 @media(max-width:32em){
   .main{
-    width:26%;  
-    margin-left:37%;
+    width:300px;
+  }
+  .btn{
+    /* max-width:300px; */
+    width:96%; 
+  	/* margin-top: -185%; */
+  	padding: 12px 0px 12px 10px;
   }
 }

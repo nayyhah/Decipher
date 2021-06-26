@@ -31,7 +31,7 @@ $(document).on('click', '.dropdown-select', function (event) {
     } else {
         $(this).find('.option').removeAttr('tabindex');
         $(this).focus();
-    }
+}
 });
 
 // Close when clicking outside

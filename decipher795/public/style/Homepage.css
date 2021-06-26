@@ -2,13 +2,18 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
 
 :root{
-	--c1:#edf2fc;
-	--c2:#60f58d;	
+	--ca:#edf2fc;
+	--cb:rgb(51, 50, 53);	
+  --cc:rgb(50, 49, 53);
+
 }
 
 .dark-theme{
-	--c1:#000106;
-	--c2:#fff;
+	--ca:#000106;
+	--cb:rgb(230, 222, 222);
+  --cc:rgb(214, 208, 208);
+  
+  /* var(--c2); */
 }
 *:focus {
     outline: none;
@@ -19,9 +24,15 @@
 
 h1{
   text-align: center;
+  color:var(--cb);
 }
 p{
   text-align: center;
+}
+
+.main-content p{
+  color:var(--cc);
+  font-size: 17px;
 }
 .inputbox input {
   /* max-width:350px; */
@@ -49,11 +60,12 @@ p{
 }
 .quotel{
   font-size: 10px;
-  color:red;
+  color:rgb(56, 16, 233);
+  margin-right: 2px;
 }
 .quoter{
   font-size: 10px;
-  color:red;
+  color:rgb(56, 16, 233);
 }
 
 
@@ -71,6 +83,7 @@ p{
 
 /* Mobile View */
 @media(max-width:32em){
+  
   .inputbox input {
     width:82%;  
     margin-left:10%;
@@ -78,5 +91,14 @@ p{
   .main{
     width:26%;  
     margin-left:37%;
+  }
+  .main-content p{
+    font-size: 14px;
+  }
+  .quotel{
+    font-size: 9px;
+  }
+  .quoter{
+    font-size: 9px;
   }
 }
