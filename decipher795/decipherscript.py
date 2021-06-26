@@ -1,15 +1,15 @@
 print("Your Python code is running.")
 
 import os
-os.system("pip3 install azure-storage-blob")
-os.system("pip3 install mhyt")
-os.system("pip3 install moviepy")
-os.system("pip3 install ffmpeg-python")
-os.system("pip3 install pafy")
-os.system("pip3 install pydub")
-os.system("pip3 install SpeechRecognition")
-os.system("pip3 install gTTS")
-os.system("pip3 install os")
+# os.system("pip3 install azure-storage-blob")
+# os.system("pip3 install mhyt")
+# os.system("pip3 install moviepy")
+# os.system("pip3 install ffmpeg-python")
+# os.system("pip3 install pafy")
+# os.system("pip3 install pydub")
+# os.system("pip3 install SpeechRecognition")
+# os.system("pip3 install gTTS")
+# os.system("pip3 install os")
 print("OS System ending")
 
 from azure.storage.blob import ContainerClient
@@ -24,16 +24,23 @@ with open(input_link_file_name, "wb") as my_blob:
        download_stream = input_link_blob_client.download_blob()
        my_blob.write(download_stream.readall())
 
+print("Blob Storage1")
+
 from mhyt import yt_download
 f = open("input_link.txt", "r")
 url = f.read()
 file = "rhym_mp4.mp4"
 yt_download(url,file)
 
+print("YT Download")
+
+
 from moviepy.editor import *
 video = VideoFileClip('rhym_mp4.mp4')
 audio = video.audio
 audio.write_audiofile('rhym_mp3.wav')
+
+print("Audio Conversion")
 
 os.system("ffmpeg -i rhym_mp4.mp4 -vcodec copy -an rhym_no_audio.mp4 -y")
 

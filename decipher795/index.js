@@ -78,7 +78,9 @@ app.post('/', function(req,res){
 
         let largeDataSet = [];
         // spawn new child process to call the python script
+        console.log('#1 ...')
         const python = spawn('python', ['decipherscript.py']);
+        console.log('#2 ...')
 
         // collect data from script
         python.stdout.on('data', function (data) {
