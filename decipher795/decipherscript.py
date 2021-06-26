@@ -1,13 +1,16 @@
+print("Your Python code is running.")
+
 import os
-os.system("pip install azure-storage-blob")
-os.system("pip install mhyt")
-os.system("pip install moviepy")
-os.system("pip install ffmpeg-python")
-os.system("pip install pafy")
+os.system("pip3 install azure-storage-blob")
+os.system("pip3 install mhyt")
+os.system("pip3 install moviepy")
+os.system("pip3 install ffmpeg-python")
+os.system("pip3 install pafy")
 os.system("pip3 install pydub")
 os.system("pip3 install SpeechRecognition")
-os.system("pip install gTTS")
-os.system("pip install os")
+os.system("pip3 install gTTS")
+os.system("pip3 install os")
+print("OS System ending")
 
 from azure.storage.blob import ContainerClient
 
