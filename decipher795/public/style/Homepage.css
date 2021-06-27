@@ -5,13 +5,15 @@
 	--ca:#edf2fc;
 	--cb:rgb(51, 50, 53);	
   --cc:rgb(50, 49, 53);
+  --cd:#7070e5ff;
 
 }
 
 .dark-theme{
 	--ca:#000106;
-	--cb:rgb(230, 222, 222);
-  --cc:rgb(214, 208, 208);
+	--cb:#d5d5f7ff;
+  --cc:#c5c5fcff;
+  --cd:#9090f7ff;
   
   /* var(--c2); */
 }
@@ -60,12 +62,12 @@ p{
 }
 .quotel{
   font-size: 10px;
-  color:rgb(56, 16, 233);
+  color:var(--cd);
   margin-right: 2px;
 }
 .quoter{
   font-size: 10px;
-  color:rgb(56, 16, 233);
+  color:var(--cd);
 }
 
 

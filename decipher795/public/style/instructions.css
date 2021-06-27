@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,400&display=swap');
+
+#home-content .about-intro .row img{
+    height:300px;
+    width:auto;
+    margin-left:10%;
+}
+.about-intro .t1 {
+    font-size:30px;
+    margin-left:30%;
+    color : red;
+    margin-bottom:40px;
+    font-family: 'Lato', sans-serif;
+}
+.no{
+    font-size:30px;
+}
+.center{
+    align:center;
+}
+
+@media(max-width:32em){
+  #home-content .about-intro .row img{
+    height:250px;
+    margin:auto;
+  }
+  .about-intro .t1 {
+    font-size:30px;
+    margin:auto;
+    display:none ;
+}

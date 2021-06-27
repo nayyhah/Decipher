@@ -82,14 +82,15 @@
       padding: 30px; width:420px;
     }
     #home-content h2 {
-      font-size:30px;
+      font-size:40px;
+      letter-spacing:3px; 
     }
     #home-content .block {
       padding: 30px;
     }
     #home-content .parallax {
-        padding-top:100px; 
-        padding-bottom:100px;
+        padding-top:75px; 
+        padding-bottom:75px;
     }
 }
 @media screen and (max-width: 479px) {
