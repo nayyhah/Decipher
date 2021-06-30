@@ -260,4 +260,14 @@
         opacity: 0;
     }
 }
+
+@media(max-width:32em){
+    .process .p1{
+        font-size: 35px;
+    }
+    .process .p2{
+        font-size: 23px;
+        top:-3px;
+    }
+}
  

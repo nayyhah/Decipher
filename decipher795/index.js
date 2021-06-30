@@ -2,6 +2,7 @@ var fs = require('fs');
 var express=require("express");
 var bodyParser=require("body-parser");
 const { spawn } = require('child_process');
+var exec = require('child_process').execFile;
 require('dotenv').config();
 const { BlobServiceClient } = require("@azure/storage-blob");
 const storageAccountConnectionString = process.env.AZURE_STORAGE_CONNECTION_STRING;
@@ -78,29 +79,20 @@ app.post('/', function(req,res){
         
         //Upload Link and Language Files in Blob 
         blobUpload();
-
-        let largeDataSet = [];
-        // Spawn new child process to call the python script
-        console.log('Trying to run Python Script')
-        const python = spawn('python', ['decipherscript.py']);
-
-        // collect data from script
-        python.stdout.on('data', function (data) {
-            console.log('Pipe data from python script ...')
-            //dataToSend =  data;
-            largeDataSet.push(data)
-        })
-
-        // in close event we are sure that stream is from child process is closed
-        python.on('close', (code) => {
-            console.log(`child process close all stdio with code ${code}`);
-            // send data to browser
-            // res.send(largeDataSet.join(''));
-            return res.redirect('pages/finalpage.html');
-        })
-        
-        //Download title of Video from Blob
-        blobDownload();
+       
+        // Run python .exe file
+        var fun =function(){
+            console.log("fun() start");
+            exec('decipherscript.exe', function(err, data) { 
+                console.log(`child process close all stdio with code`);
+                console.log(err);
+                console.log(data.toString());                       
+            });
+            return res.redirect('pages/finalpage.html');  
+        }
+        fun();
+        // return res.redirect('pages/finalpage.html');  
+    
     }
     else{
         console.log("Link is not Validated. Empty/Incorrect URL");
@@ -120,24 +112,17 @@ app.post('/pages/finalpage', function(req,res){
 
     blobUpload();
 
-    let largeDataSet = [];
-    // spawn new child process to call the python script
-    const python = spawn('python', ['decipherscript.py']);
+    var fun =function(){
+        console.log("fun() start");
+        exec('decipherscript.exe', function(err, data) { 
+            console.log(`child process close all stdio with code`);
+            console.log(err);
+            console.log(data.toString());                       
+        });
+        return res.redirect('pages/finalpage.html');  
+    }
+    fun();
 
-    // collect data from script
-    python.stdout.on('data', function (data) {
-        console.log('Pipe data from python script ...')
-        //dataToSend =  data;
-        largeDataSet.push(data)
-    })
-
-    // in close event we are sure that stream is from child process is closed
-    python.on('close', (code) => {
-        console.log(`child process close all stdio with code ${code}`);
-        // send data to browser
-        // res.send(largeDataSet.join(''));
-        return res.redirect('finalpage.html');
-    })
 })
 
 
