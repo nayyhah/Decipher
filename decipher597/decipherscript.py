@@ -16,6 +16,8 @@ from pydub import AudioSegment
 from pydub.silence import split_on_silence
 from azure.storage.blob import ContainerClient, ContentSettings
 from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_subclip
+from googletrans import Translator
+translator = Translator()
 
 def get_large_audio_transcription(r, path):
     """
@@ -88,21 +90,11 @@ def main():
     file = "rhym_mp4.mp4"
     yt_download(url,file)
 
-    # yt = YouTube(urlopen(url))
-    # yt.streams.first().download()
-    # os.rename(yt.streams.first().default_filename, 'rhym_mp4.mp4')
 
     """ Extracting audio from video """
     video = VideoFileClip('rhym_mp4.mp4')
     audio = video.audio
     audio.write_audiofile('rhym_mp3.wav')
-
-
-    """ Removing original audio from the video """
-    input = ffmpeg.input('rhym_mp4.mp4')
-    video = input.video
-    stream = ffmpeg.output(video, 'rhym_no_audio.mp4')
-    ffmpeg.run(stream)
 
 
     """ Translating audio """
@@ -126,21 +118,23 @@ def main():
     file = open("write.txt", "r").read().replace("\n", " ")
     language = lang
 
+    translation = translator.translate(str(file), dest=language)
+
     # passing the text and language to the engine
     # (slow=True: converted video has slow/normal speed)
-    myobj = gTTS(text=str(file), lang=language, slow=True)
+    myobj = gTTS(text=translation.text, lang=language, slow=True)
 
     # saves the converted audio in an mp3 file
     myobj.save("translated.mp3")
     
     # merges the translated audio with the video with no audio
-    videoclip = VideoFileClip("rhym_no_audio.mp4")
+    videoclip = VideoFileClip("rhym_mp4.mp4")
     audioclip = AudioFileClip("translated.mp3")
-    new_audioclip = CompositeAudioClip([audioclip])
-    videoclip.audio = new_audioclip
-    videoclip.write_videofile("final.mp4")
+    new_clip = videoclip.set_audio(audioclip)
 
-    ffmpeg_extract_subclip("final.mp4", 0, 110, targetname="final_final.mp4")
+    new_clip.write_videofile("final_final.mp4")
+
+    # ffmpeg_extract_subclip("final.mp4", 0, 110, targetname="final_final.mp4")
 
     """ Extracts name of youtube video from link """
     video = pafy.new(url)
@@ -167,17 +161,11 @@ def main():
 
 
     """ Deletes files created during the process """
-    os.remove("rhym_mp4.mp4")
+    
     os.remove("rhym_mp3.wav")
-    os.remove("rhym_no_audio.mp4")
     os.remove("translated.mp3")
-    os.remove("final.mp4")
     os.remove("write.txt")
     rmtree('audio-chunks')
-
-    # return func.HttpResponse(
-    #     # "Trial...uncomment this if an error shows up, else, remove this completely",
-    #     status_code=200
-    # )
+    #os.remove("rhym_mp4.mp4")
 
 main()
