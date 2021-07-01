@@ -91,8 +91,10 @@ app.post('/', function(req,res){
             return res.redirect('pages/finalpage.html');  
         }
         fun();
-        // return res.redirect('pages/finalpage.html');  
-    
+        // return res.redirect('pages/finalpage.html'); 
+
+        //Download title of Video from Blob
+        blobDownload(); 
     }
     else{
         console.log("Link is not Validated. Empty/Incorrect URL");
@@ -122,6 +124,9 @@ app.post('/pages/finalpage', function(req,res){
         return res.redirect('pages/finalpage.html');  
     }
     fun();
+
+    //Download title of Video from Blob
+    blobDownload();
 
 })
 
