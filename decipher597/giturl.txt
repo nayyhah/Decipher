@@ -1,0 +1,14 @@
+git clone https://decipher597.scm.azurewebsites.net/decipher597.git
+
+
+git remote add azure https://$decipher597:JDLhX8S1tDWqRKKNlpQq3uc8vYzfwPen21N7DQH2ib7F6l3Lwqnoj2bgDxvT@decipher795.scm.azurewebsites.net
+(U ; P) : ($decipher597 ; JDLhX8S1tDWqRKKNlpQq3uc8vYzfwPen21N7DQH2ib7F6l3Lwqnoj2bgDxvT)
+
+https://docs.microsoft.com/en-us/answers/questions/67581/34-application-error-if-you-are-the-application-ad.html
+
+#Azure Web-App Link
+https://decipher597.azurewebsites.net/
+
+#YouTube Links
+https://www.youtube.com/watch?v=lZcmLaY7fG0
+https://www.youtube.com/watch?v=FJ3N_2r6R-o
