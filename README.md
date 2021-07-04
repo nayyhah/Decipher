@@ -1,6 +1,6 @@
-<img src="./decipher597/public/images/decipher_icon.png" alt="Logo" width="600">
+<img src="./decipher597/public/images/decipher_icon.png" alt="Logo" width="500">
 
-# DECIPHER | <i>Breaking the Walls of Linguistic Barrier</i>
+## DECIPHER | <i>Breaking the Walls of Linguistic Barrier</i>
 
 
 Decipher is a revolutionary tool to help get rid off the linguistic barriers pertaining among the people by providing a unique portal to translate the audio in the videos into the user's preferred language.
