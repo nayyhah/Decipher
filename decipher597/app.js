@@ -79,21 +79,22 @@ app.post('/', function(req,res){
         
         //Upload Link and Language Files in Blob 
         blobUpload();
-       
-        // Run python .exe file
-        var fun =function(){
-            console.log("fun() start");
-            exec('decipherscript.exe', function(err, data) { 
-                console.log(`child process close all stdio with code`);
-                console.log(err);
-                console.log(data.toString());                       
-            });
-            return res.redirect('pages/finalpage.html');  
-        }
-        fun();
-        // return res.redirect('pages/finalpage.html'); 
 
-        //Download title of Video from Blob
+        //Run Python Script 
+        let largeDataSet = [];
+
+        var child = exec('decipherscript.exe');
+        child.stdout.on('data', function(data) {
+            console.log('Pipe data from python script ...')
+            largeDataSet.push(data)
+        });
+        
+        child.on('close', function() {
+            console.log(`child process close all stdio`);
+            return res.redirect('pages/finalpage.html');
+            // return setTimeout(function () {res.redirect('pages/finalpage.html');}, 30000); 
+        });
+
         blobDownload(); 
     }
     else{
@@ -114,16 +115,20 @@ app.post('/pages/finalpage', function(req,res){
 
     blobUpload();
 
-    var fun =function(){
-        console.log("fun() start");
-        exec('decipherscript.exe', function(err, data) { 
-            console.log(`child process close all stdio with code`);
-            console.log(err);
-            console.log(data.toString());                       
-        });
-        return res.redirect('pages/finalpage.html');  
-    }
-    fun();
+    //Run Python Script 
+    let largeDataSet = [];
+
+    var child = exec('decipherscript.exe');
+    child.stdout.on('data', function(data) {
+        console.log('Pipe data from python script ...')
+        largeDataSet.push(data)
+    });
+    
+    child.on('close', function() {
+        console.log(`child process close all stdio`);
+        return res.redirect('pages/finalpage.html');
+        // return setTimeout(function () {res.redirect('pages/finalpage.html');}, 30000); 
+    });
 
     //Download title of Video from Blob
     blobDownload();
@@ -139,6 +144,7 @@ app.get('/',function(req,res){
 }).listen(port)
 
 
+//Get the title of Youtube Video from Blob Storage
 // app.get('/pages/finalpage',function(req,res){
 
 //     fs.readFile('write_title.txt', videotitle)
