@@ -11,10 +11,10 @@
 }
 
 .about-intro .t1 {
-    border-bottom: 2px solid black;
+    /* border-bottom: 2px solid black;
     padding-bottom: 3px;
-    border-width: 50%;
-    font-size:25px;
+    border-width: 50%; */
+    font-size:28px;
     margin-left:30%;
     color : #226E93;
     margin-bottom:40px;

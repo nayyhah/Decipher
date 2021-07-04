@@ -1,11 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Oswald:200,400|Playfair+Display:400,400i");
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 
 :root{
 	--ca:#edf2fc;
 	--cb:rgb(51, 50, 53);	
   --cc:rgb(50, 49, 53);
   --cd:#7070e5ff;
+  --ce:rgba(123, 196, 224, 0.4);
+  --cf:rgb(81, 100, 209);
+  --cg:rgba(0, 0, 0, 0);
+  --ch:rgb(52, 69, 168);
 
 }
 
@@ -14,6 +19,10 @@
 	--cb:#d5d5f7ff;
   --cc:#c5c5fcff;
   --cd:#9090f7ff;
+  --ce:rgba(69, 111, 126, 0.4);
+  --cf:rgb(186, 193, 229);
+  --cg:rgba(0, 0, 0, 0);
+  --ch:rgb(226, 229, 243);
   
   /* var(--c2); */
 }
@@ -30,6 +39,23 @@ h1{
 }
 p{
   text-align: center;
+}
+
+#message {
+  background-color: var(--ce);
+  text-align: center;
+  padding: 10px;
+  font-size: 17px;
+  color: var(--cf);
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+#close-button{ 
+  border:none; 
+  background-color: var(--cg);
+  color: var(--ch);
+  text-decoration: underline;
+  margin-left: 20px;
 }
 
 .main-content p{
@@ -85,6 +111,15 @@ p{
 
 /* Mobile View */
 @media(max-width:32em){
+  #message {
+  padding: 10px;
+  font-size: 15px;
+  line-height: 19px;
+}
+
+#close-button{ 
+  margin-left: 16px;
+}
   
   .inputbox input {
     width:82%;  

@@ -13,7 +13,7 @@
     <!-- Required meta properties -->
     <meta property="og:type" content="Project" />
     <meta property="og:title" content="Decipher" />
-    <meta property="og:description" content="~ ~ DESCRIPTION OF PAGE CONTENT ~ ~" />
+    <meta property="og:description" content="Breaking the Walls of Linguistic Barrier" />
     <meta property="og:image" content="LINK TO THE IMAGE FILE" />
    
     <!-- Icon -->
@@ -109,8 +109,14 @@
 		<!-- Home Content -->
 
         <div class="main-content" id="content" style="display:block;">
+            
+            <div id="message">
+                Please give a video of 1 to 2 minutes for faster results <span><input onclick="Close()" class="close-btn" id="close-button" type="Submit" value="Close"></span>
+            </div>
+
             </br>
             </br>
+
             <h1>Decipher</h1>
             <p>
                 <span class="quotel"><i class="fa fa-quote-left"></i>
@@ -220,11 +226,19 @@
     <script src="/Scripts/jquery.min.js"></script>
     <script src="/Scripts/bootstrap.min.js"></script>
 
+    <script type="text/javascript">
+        function Close() {
+                message = document.getElementById("message");
+                message.style.display = "none";
+            }
+    </script>
+
     <!-- JavaScript Linked-->
     <script src="/scripts/Navbar.js"></script>
     <script src="/scripts/Darkmode.js"></script>
     <script src="/scripts/Dropdown.js"></script>
     <script src="/scripts/UserInputVal.js"></script>
+    
     
 </body>
 </html>

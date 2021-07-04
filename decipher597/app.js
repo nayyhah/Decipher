@@ -144,29 +144,6 @@ app.get('/',function(req,res){
 }).listen(port)
 
 
-//Get the title of Youtube Video from Blob Storage
-// app.get('/pages/finalpage',function(req,res){
-
-//     fs.readFile('write_title.txt', videotitle)
-//     // Function to return 
-//     async function videotitle (err, data)
-//     {
-//         var title;
-//         /* If an error exists, show it, otherwise show the file */
-//         err ? Function("error","throw error")(err) : (title = JSON.stringify(data) );
-//         var objectValue = JSON.parse(title);
-//         var video_title="";
-//         for(i=0;i<objectValue['data'].length;i++){
-//             // console.log(objectValue['data'][i]);
-//             var res = String.fromCharCode(objectValue['data'][i]);
-//             video_title+=res;
-//         }
-//         console.log(video_title);
-//         res.send(video_title); 
-//     };
-// })
-
-
 console.log(`Server running at http://localhost:${port}`);
 
 app.use(express.static(__dirname + '/public'));

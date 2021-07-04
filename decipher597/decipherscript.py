@@ -1,22 +1,16 @@
-# import azure.functions as func
-import logging
-
 import os
 import pafy
-import ffmpeg
-import speech_recognition as sr 
+import speech_recognition as sr
 from gtts import gTTS
 from shutil import rmtree
 from mhyt import yt_download
-from urllib.request import urlopen
-from moviepy.video.io.VideoFileClip import VideoFileClip
-from moviepy.audio.AudioClip import CompositeAudioClip
-from moviepy.audio.io.AudioFileClip import AudioFileClip
 from pydub import AudioSegment
-from pydub.silence import split_on_silence
-from azure.storage.blob import ContainerClient, ContentSettings
-from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_subclip
 from googletrans import Translator
+from pydub.silence import split_on_silence
+from moviepy.video.io.VideoFileClip import VideoFileClip
+from moviepy.audio.io.AudioFileClip import AudioFileClip
+from azure.storage.blob import ContainerClient, ContentSettings
+
 translator = Translator()
 
 def get_large_audio_transcription(r, path):
@@ -28,12 +22,12 @@ def get_large_audio_transcription(r, path):
     file1 = open("write.txt","w+")
 
     # open the audio file using pydub
-    sound = AudioSegment.from_wav(path)  
-    # split audio sound where silence is 700 miliseconds or more into chunks
+    sound = AudioSegment.from_wav(path)
+    # split audio sound where silence is 500 miliseconds or more into chunks
     chunks = split_on_silence(sound,
         min_silence_len = 500,
         silence_thresh = sound.dBFS-14,
-        # keep the silence for 1 second, adjustable as well
+        # keep the silence for 0.5 second
         keep_silence=500,
     )
 
@@ -43,7 +37,7 @@ def get_large_audio_transcription(r, path):
         os.mkdir(folder_name)
 
     whole_text = ""
-    # process each chunk 
+    # process each chunk
     for i, audio_chunk in enumerate(chunks, start=1):
         # export and save audio chunk in `folder_name` directory.
         chunk_filename = os.path.join(folder_name, "chunk{}.wav".format(i))
@@ -69,8 +63,7 @@ def get_large_audio_transcription(r, path):
     return whole_text
 
 def main():
-    # logging.info('Python HTTP trigger function processed a request.')
-   
+
     """ Connection with Blob storage """
     connection_string = "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=decipherstorage795;AccountKey=0+77lFFZx4uKfxIYL4sgznMajte9Sjo7fNd3Ggm3nRPJ/q9YkDAoTgTa8rNw7wKrwsTUwkTsPulKMjM1rpG+LQ=="
     container_name = "videos"
@@ -83,6 +76,7 @@ def main():
     with open(input_link_file_name, "wb") as my_blob:
            download_stream = input_link_blob_client.download_blob()
            my_blob.write(download_stream.readall())
+
 
     """ Downloading Youtube video """
     f = open("input_link.txt", "r")
@@ -118,23 +112,22 @@ def main():
     file = open("write.txt", "r").read().replace("\n", " ")
     language = lang
 
+    # translate the speech in the audio file
     translation = translator.translate(str(file), dest=language)
 
-    # passing the text and language to the engine
+    # convert translated text into audio
     # (slow=True: converted video has slow/normal speed)
     myobj = gTTS(text=translation.text, lang=language, slow=True)
 
     # saves the converted audio in an mp3 file
     myobj.save("translated.mp3")
-    
-    # merges the translated audio with the video with no audio
+
+    # merge the translated audio with the video with no audio
     videoclip = VideoFileClip("rhym_mp4.mp4")
     audioclip = AudioFileClip("translated.mp3")
     new_clip = videoclip.set_audio(audioclip)
 
     new_clip.write_videofile("final_final.mp4")
-
-    # ffmpeg_extract_subclip("final.mp4", 0, 110, targetname="final_final.mp4")
 
     """ Extracts name of youtube video from link """
     video = pafy.new(url)
@@ -161,7 +154,6 @@ def main():
 
 
     """ Deletes files created during the process """
-    
     os.remove("rhym_mp3.wav")
     os.remove("translated.mp3")
     os.remove("write.txt")
