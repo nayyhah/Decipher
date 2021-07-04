@@ -37,7 +37,7 @@ Development
 <img src="./decipher597/public/images/DecipherArchitecture.png" alt="Logo" width="700">
 
 ## Outreach
-With ___60+ distinct languages___ and different accents, Decipher aims to benefit at least 80% of the world’s population. It can be used in various fields including, but not limited to:
+With ___60+ distinct languages___ and different accents, Decipher aims to benefit at least __80%__ of the world’s population. It can be used in various fields including, but not limited to:
 
 - Education
 - International businesses
