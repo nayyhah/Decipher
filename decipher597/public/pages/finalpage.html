@@ -23,10 +23,12 @@
     <link rel="stylesheet" href="/style/fontawesome.min.css"/>
 
     <!-- CSS Linked -->
+    
     <link rel="stylesheet" href="/style/Navbar.css"/>
     <link rel="stylesheet" href="/style/Dropdown.css"/>
     <link rel="stylesheet" href="/style/SubmitButton.css"/>
     <link rel="stylesheet" href="/style/finalPage.css"/>
+    <link rel="stylesheet" href="/style/Loading.css"/>
 
     <title>Decipher</title>
 
@@ -77,9 +79,36 @@
 		    </div>
 	    </div>
 
-        <!-- Home Content -->
+        <!-- Loading Content -->
+        <div class="loader" id="loading" style="display:none;">
+            <div class="body">
+                <span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <div class="base">
+                    <span></span>
+                    <div class="face"></div>
+                </div>
+            </div>
 
-        <div class="main-content">
+            <div class="longfazers">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h1>Processing</h1>
+            <p class="process"> <span class="p1">Processing.... </span><br><br>
+            <span class="p2">Please wait for a few more minutes.</span><br>
+            </p>
+        </div> 
+        
+        
+        <div class="main-content" id="content" style="display:block;">
             </br>
             </br>
 
@@ -205,6 +234,20 @@
     <script src="/Scripts/Darkmode.js"></script>
     <script src="/scripts/Dropdown.js"></script>
     
+    <script >
+        function UserInput(){
+            var block1 = document.getElementById('content');
+            var block2 = document.getElementById('loading');
+            var block3 = document.getElementById('footer');
+            block1.style.display = "none";
+            block2.style.display = "block";
+            block3.style.position = "fixed";
+            block3.style.left = "0";
+            block3.style.bottom = "0";
+            block3.style.width = "100%";
+        }
+    </script>
+        
     <script >
         //var video_title;
         //fetch("localhost:8080/pages/finalpage").then((res) {video_title = res;})

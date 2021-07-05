@@ -102,7 +102,8 @@ app.post('/', function(req,res){
     }
 })
 
-//Change Language Request From Final Page
+
+//Change Language Request From Final Pages
 app.post('/pages/finalpage', function(req,res){
 
 	var lang =req.body.lang;
@@ -115,10 +116,10 @@ app.post('/pages/finalpage', function(req,res){
 
     blobUpload();
 
-    //Run Python Script 
+    //Run PythonScript 
     let largeDataSet = [];
 
-    var child = exec('decipherscript.exe');
+    var child = exec('./decipherscript.exe');
     child.stdout.on('data', function(data) {
         console.log('Pipe data from python script ...')
         largeDataSet.push(data)
@@ -126,13 +127,12 @@ app.post('/pages/finalpage', function(req,res){
     
     child.on('close', function() {
         console.log(`child process close all stdio`);
-        return res.redirect('pages/finalpage.html');
+        return res.redirect('finalpage.html');
         // return setTimeout(function () {res.redirect('pages/finalpage.html');}, 30000); 
     });
 
     //Download title of Video from Blob
     blobDownload();
-
 })
 
 
