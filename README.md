@@ -6,6 +6,10 @@
 Decipher is a revolutionary tool to help get rid off the linguistic barriers pertaining among the people by providing a unique portal to translate the audio in the videos into the user's preferred language.
 
  > [DECIPHER WebApp](http://decipher597.azurewebsites.net/)
+
+ > [DECIPHER Implementation Video](https://www.youtube.com/watch?v=L3rnBu09vU0)
+ 
+ > [DECIPHER Demo Video](https://www.youtube.com/watch?v=Z3HrvIjwNeA)
  
 ## Positive Impact
 <details>
