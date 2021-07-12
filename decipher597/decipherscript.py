@@ -127,7 +127,14 @@ def main():
     audioclip = AudioFileClip("translated.mp3")
     new_clip = videoclip.set_audio(audioclip)
 
-    new_clip.write_videofile("final_final.mp4")
+    try:
+        new_clip.write_videofile("final_final.mp4")
+    except:
+        pass
+
+    videoclip.close()
+    new_clip.close()
+    video.close()
 
     """ Extracts name of youtube video from link """
     video = pafy.new(url)
@@ -158,6 +165,6 @@ def main():
     os.remove("translated.mp3")
     os.remove("write.txt")
     rmtree('audio-chunks')
-    #os.remove("rhym_mp4.mp4")
+    os.remove("rhym_mp4.mp4")
 
 main()

@@ -55,7 +55,6 @@ h1{
   width:63%;  
   height:250px;
   margin-top: 10%;
-  
 }
 .main-content .row img{
   height: 230px;
@@ -68,12 +67,25 @@ h1{
 /* Mobile View */
 @media(max-width:32em){
   .main{
-    width:300px;
+    width:17em;
+    margin-top: 4%;
   }
   .btn{
-    /* max-width:300px; */
-    width:96%; 
-  	/* margin-top: -185%; */
-  	padding: 12px 0px 12px 10px;
+    max-width:20em; 
+  	padding: 12px 35px 12px 50px;
+    margin-top: -24em;
   }
+  .main-content iframe{
+    border-radius: 7px;
+    width: 90%;
+    height: 12em;
+    margin-left:5%;
+  }
+  /* .main-content .row img{
+    height: 230px;
+    width: 400px;
+    margin-top: -100px;
+    margin-top: -5em;
+    margin-left: 1%;
+  } */
 }
