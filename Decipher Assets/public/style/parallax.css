@@ -1,0 +1,101 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+
+/* Override UGG site */
+#main {
+    width: 100%; 
+    padding:0;
+}
+.content-asset p {
+    margin:0 auto;
+}
+.breadcrumb {
+    display:none;
+}
+
+/* Helpers */
+/**************************/
+.margin-top-10 {
+    padding-top:10px;
+}
+.margin-bot-10 {
+    padding-bottom:10px;
+}
+
+/* Typography */
+/**************************/
+
+#home-content h2 img{
+    height:130px;
+    width:auto;
+}
+#home-content h2 {
+    font-family:'Oswald', sans-serif; 
+    font-size:60px; letter-spacing:10px; 
+    text-align:center; color:white; 
+    font-weight:400; 
+    text-transform:uppercase; 
+    z-index:10; opacity:.9;
+}
+
+#home-content .about-intro {
+    font-family:'Source Sans Pro', sans-serif; 
+    margin : 30px;
+    font-weight:400; 
+    font-size:18px; 
+    line-height:24px;
+}
+#home-content .about-intro .row img{
+    height:190px;
+    width:auto;
+}
+
+/* Section - Parallax */
+/**************************/
+#home-content .parallax {
+    padding-top: 90px; 
+    padding-bottom: 85px; 
+    overflow: hidden; 
+    position: relative; 
+    width: 100%; 
+    background-image: url(/images/bg1.jpg); 
+    background-attachment: fixed; 
+    background-size: cover; 
+    -moz-background-size: cover; 
+    -webkit-background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: top center;
+}
+
+
+
+/* Media Queries */
+/**************************/
+@media screen and (max-width: 959px) and (min-width: 768px) {
+  #home-content .block {
+      padding: 40px; 
+      width:620px;
+    }
+}
+@media screen and (max-width: 767px) {
+    #home-content .block {
+      padding: 30px; width:420px;
+    }
+    #home-content h2 {
+      font-size:40px;
+      letter-spacing:3px; 
+    }
+    #home-content .block {
+      padding: 30px;
+    }
+    #home-content .parallax {
+        padding-top:75px; 
+        padding-bottom:75px;
+    }
+}
+@media screen and (max-width: 479px) {
+    #home-content .block {
+        padding: 30px 15px; 
+        width:290px;
+    }
+}

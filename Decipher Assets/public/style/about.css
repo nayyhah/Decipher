@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
+
+#home-content .row{
+    margin-left:12%;
+    margin-bottom:5%;
+    margin-top:5%;
+    margin-right:10%;
+}
+#home-content h3 {
+    font-size:30px;
+    color : #151675;
+    /* color: #231B50; */
+    font-family: 'Noto Sans JP', sans-serif;
+    
+}
+
+#home-content .row h4{
+    margin-top: 20px;
+    color : #231B50;
+    font-size:21px;
+}
+.map-cont1 {
+    font-size: 21px;
+    font-family: 'Hind', sans-serif;
+}
+.map-cont2 {
+    font-size: 18px;
+    font-family: 'Hind', sans-serif;
+}
+/* .map-st{
+  margin-left:14px;
+}     */
+
+
+.prob-st{
+    text-align: center;
+    font-size:17px;
+    color : #231B50;
+    color : #4253b1;
+}
+.l1{
+  margin-bottom: 15px;
+}
+.l2{
+  margin-bottom: 29px;
+}
+
+.about-intro .t2 {
+    font-size:20.5px;
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-top: 2%;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Hind', sans-serif;
+    line-height: 28px;
+}
+
+#home-content .row img{
+    height:170px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+
+.no{
+    font-size:32px;
+}
+.center{
+    box-align:center;
+    font-size:23px;
+    margin: auto;
+    width: 100%;
+}
+
+@media(max-width:32em){
+  #home-content  .row{
+    margin:auto;
+  }
+  #home-content .row img{
+    height:250px;
+    margin:auto;
+  }
+  #home-content h3 {
+    display:none ;
+  }
+  .center{
+    font-size:17px;
+  }
+  .no{
+    font-size:25px;
+  }
+}
