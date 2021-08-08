@@ -70,4 +70,16 @@ With ___60+ distinct languages___ and different accents, Decipher aims to benefi
 - Sports
 - Language Learning
 
+## Future Scope
+<details>
+    <summary><b>Integrating with online learning platforms :</b> Allows people to sign in using their accounts in learning platforms like Coursera, etc. and translate the audio to the courses they have access to.</summary>
+</details>
+<details>
+    <summary><b>Addition of real-time translation :</b> Aids in eradicating linguistic barriers in online classes and meets, thus allowing students from diverse backgrounds to attend classes.</summary>
+</details>
+<details>
+    <summary><b>Inclusion of sign language :</b> Useful for people with auditory impairments, thus increasing digital accessibility.</summary>
+</details> 
+
+
 > <i>Get ready to witness the whole world in your eye, in your language, with Decipher!</i> 
